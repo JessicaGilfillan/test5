@@ -17,7 +17,7 @@ let marker=new google.maps.Marker({position:deliveryLocation,map:map});
 }
 
 function getIt() {
-fetch('https://sodvadiyavidhi.github.io/ScriptLab/weird.json')
+fetch('https://jessicagilfillan.github.io/test5/weird.json')
  .then(function(response){ 
     //returning the json response 
     return response.json();
@@ -33,7 +33,7 @@ fetch('https://sodvadiyavidhi.github.io/ScriptLab/weird.json')
 				let p1 = document.createElement('p');
 				let list = document.createElement('ul');
         let section = document.querySelector('section');
-				img.setAttribute('src', 'https://sodvadiyavidhi.github.io/ScriptLab/Image/' + weirdthings[i].image);
+				img.setAttribute('src', 'https://jessicagilfillan.github.io/test5/weird.json/Image/' + weirdthings[i].image);
 				img.setAttribute('alt', weirdthings[i].name);
 				h2.textContent = weirdthings[i].name;
 				p1.textContent = 'Price: ' +

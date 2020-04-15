@@ -16,7 +16,7 @@ let map = new google.maps.Map(div, {
 let marker=new google.maps.Marker({position:deliveryLocation,map:map});
 }
 
-fetch('https://jessicagilfillan.github.io/test5/weird.json')
+let weirdDealsPromise = fetch('https://sodvadiyavidhi.github.io/ScriptLab/weird.json')
  .then(function(response){ 
     //returning the json response 
     return response.json();
@@ -24,27 +24,33 @@ fetch('https://jessicagilfillan.github.io/test5/weird.json')
   //adding functionality 
   .then(function weirdthings(jsonObj){
 			let weirdthings = jsonObj.weirdthings;
-			console.log(weirdthings); 
-			let section = document.querySelector('section');
 			//creating new elements to set the data fetched from the github
 			for (let i = 0; i < weirdthings.length; i++) {
+        console.log(weirdthings);
 				let article = document.createElement('article');
 				let h2 = document.createElement('h2');
 				let img = document.createElement('img');
 				let p1 = document.createElement('p');
 				let list = document.createElement('ul');
         let section = document.querySelector('section');
-				img.setAttribute('src', 'https://jessicagilfillan.github.io/test5/weird.json/Image/' + weirdthings[i].image);
+				img.setAttribute('src', 'https://sodvadiyavidhi.github.io/ScriptLab/Image/' + weirdthings[i].image);
 				img.setAttribute('alt', weirdthings[i].name);
 				h2.textContent = weirdthings[i].name;
 				p1.textContent = 'Price: ' +
         weirdthings[i].price;
+        
+        
+        
+        
 				let detail = weirdthings[i].detail;
+        
 				for (let x = 0; x < detail.length; x++) {
 					let listItem = document.createElement('li');
 					listItem.textContent = detail[x];
 					list.appendChild(listItem);
 				}
+        
+        
 				article.appendChild(img);
 				article.appendChild(h2);
 				article.appendChild(p1);
@@ -52,7 +58,6 @@ fetch('https://jessicagilfillan.github.io/test5/weird.json')
 				section.appendChild(article);
 				}
     });
-}
 /*var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
 var type = connection.effectiveType;
 connection.addEventListener('change', updateConnectionStatus);

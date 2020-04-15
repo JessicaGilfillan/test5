@@ -1,4 +1,4 @@
-let section = document.querySelector('section'); 
+ 
 
 function initMap() {
   
@@ -25,6 +25,8 @@ fetch('https://jessicagilfillan.github.io/test5/weird.json')
   //adding functionality 
   .then(function weirdthings(jsonObj){
 			let weirdthings = jsonObj.weirdthings;
+			console.log(weirdthings); 
+			let section = document.querySelector('section');
 			//creating new elements to set the data fetched from the github
 			for (let i = 0; i < weirdthings.length; i++) {
 				let article = document.createElement('article');

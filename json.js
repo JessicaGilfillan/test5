@@ -16,7 +16,6 @@ let map = new google.maps.Map(div, {
 let marker=new google.maps.Marker({position:deliveryLocation,map:map});
 }
 
-function getIt() {
 fetch('https://jessicagilfillan.github.io/test5/weird.json')
  .then(function(response){ 
     //returning the json response 
@@ -66,6 +65,5 @@ function updateConnectionStatus() {
         console.log(sentence);
         type = connection.effectiveType;
 }*/
-
-getIt();                          
+                         
 
